@@ -17,6 +17,7 @@ frac  "."[0-9]+
 "true"   return 'TRUE'
 "false"  return 'FALSE'
 "null"   return 'NULL'
+"undefined" return 'UNDEFINED'
 <<EOF>>  return 'EOF'
 .        return 'INVALID'
 

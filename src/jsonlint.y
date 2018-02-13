@@ -4,6 +4,9 @@
   ECMA-262 5th Edition, 15.12.1 The JSON Grammar.
 */
 
+/*
+ added support for undefined
+*/
 
 %%
 
@@ -30,6 +33,11 @@ JSONNullLiteral
         {$$ = null;}
     ;
 
+JSONUndefinedLiteral
+    : UNDEFINED
+        {$$ = undefined;}
+    ;
+
 JSONBooleanLiteral
     : TRUE
         {$$ = true;}
@@ -44,6 +52,7 @@ JSONText
 
 JSONValue
     : JSONNullLiteral
+    | JSONUndefinedLiteral
     | JSONBooleanLiteral
     | JSONString
     | JSONNumber
